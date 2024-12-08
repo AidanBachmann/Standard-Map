@@ -4,6 +4,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 from numba import jit
 
 # ---------- Functions ----------
@@ -26,6 +27,7 @@ def burn(p0,phi0,K,Nburn): # Burn in
 def generateMap(num_orbits,K,N,Nburn,save): # Generate standard map for certain K
     fig = plt.figure(figsize=(12,10))
     colors = plt.cm.hsv(np.linspace(0,1,num_orbits)) # Set color map
+    #random.shuffle(colors) # Randomize ordering of colors
     p = np.zeros([N]) # Initialize arrays for p and phi
     phi = np.zeros([N])
     for i in np.linspace(0,num_orbits-1,num_orbits): # Generate num_orbits trajectories to build up the map
@@ -46,10 +48,10 @@ seed = 358348583
 np.random.seed(seed) # Set random number generator seed
 
 K = 0.971635 # K value
-N = 200 # Number of points to plot for each orbit
+N = 400 # Number of points to plot for each orbit
 Nburn = 500 # Number of burn in steps
-num_orbits = 5000 # Number of orbits to plot
+num_orbits = 1500 # Number of orbits to plot
 
-save = True # Save figure
+save = False # Save figure
 
 generateMap(num_orbits,K,N,Nburn,save)
