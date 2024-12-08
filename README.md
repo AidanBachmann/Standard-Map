@@ -5,7 +5,11 @@
 # Overview
 This code generates the stadard map for a specific value of the parameter $K$. Usually taken on the interal $p,\phi\in [0,2\pi ]$, the map is given by the equations
 
-$p_{n+1} = p_{n} + K\sin{\theta_{n}}$ and $\theta_{n+1} = \theta_{n} + p_{n+1},$
+$p_{n+1} = p_{n} + K\sin{\theta_{n}}$
+
+and
+
+$\theta_{n+1} = \theta_{n} + p_{n+1},$
 
 which can be derived form the unitless form of the kicked rotor Hamiltonian:
 
