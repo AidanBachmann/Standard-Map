@@ -24,7 +24,7 @@ def burn(p0,phi0,K,Nburn): # Burn in
     return p_,phi_ # Return final values, to be used as initial conditions for the trajectory that will be plotted
 
 def generateMap(num_orbits,K,N,Nburn,save): # Generate standard map for certain K
-    plt.figure(figsize=(12,10))
+    fig = plt.figure(figsize=(12,10))
     colors = plt.cm.hsv(np.linspace(0,1,num_orbits)) # Set color map
     p = np.zeros([N]) # Initialize arrays for p and phi
     phi = np.zeros([N])
@@ -36,7 +36,7 @@ def generateMap(num_orbits,K,N,Nburn,save): # Generate standard map for certain 
         plt.scatter(phi,p,s=1,color=colors[int(num_orbits-1)-int(i),:]) # Plot trajectory
     plt.title(f'K = {K}')
     if save:
-        plt.savefig(f'Standard Map for K = {K}')
+        plt.savefig(f'Standard Map for K = {K}.png',dpi=fig.dpi)
     else:
         plt.show()
 
@@ -50,6 +50,6 @@ N = 200 # Number of points to plot for each orbit
 Nburn = 500 # Number of burn in steps
 num_orbits = 5000 # Number of orbits to plot
 
-save = False # Save figure
+save = True # Save figure
 
 generateMap(num_orbits,K,N,Nburn,save)
