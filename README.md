@@ -19,6 +19,6 @@ For smaller values of $K$ ($K\sim 0.1$), the map is mostly stable. However, as $
 
 # Usage
 To generate a map, simply run
-'''sh
+```sh
 python3 main.py
-'''
+```
