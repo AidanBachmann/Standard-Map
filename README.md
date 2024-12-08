@@ -18,4 +18,4 @@ $H(p,\theta ) = \frac{p^2}{2} + K\sin{\theta}\displaystyle\sum_{n=-\infty}^{\inf
 For smaller values of $K$ ($K\sim 0.1$), the map is mostly stable. However, as $K$ increases, the map exhibits chaotic behavior (i.e., some orbits are area filling). The figure at the top was generated using $K = 0.971635$, which exhibits large regions of choas with several basins of stability.
 
 # Usage
-To generate \mint{python3 main.py}
+To generate \begin{minted}{python main.py}
