@@ -5,6 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import sys
 from numba import jit
 
 # ---------- Functions ----------
@@ -47,7 +48,10 @@ def generateMap(num_orbits,K,N,Nburn,save): # Generate standard map for certain 
 seed = 358348583
 np.random.seed(seed) # Set random number generator seed
 
-K = 0.971635 # K value
+if len(sys.argv) == 1:  
+    K = 0.971635 # K value
+elif len(sys.argv) == 2:
+    K = float(sys.argv[1])
 N = 400 # Number of points to plot for each orbit
 Nburn = 500 # Number of burn in steps
 num_orbits = 1500 # Number of orbits to plot
